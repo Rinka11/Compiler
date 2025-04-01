@@ -1,0 +1,40 @@
+#define TEST
+using System;
+
+namespace LexerTest
+{
+    /// <summary>
+    /// Проверяем работу лексера
+    /// </summary>
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x = 42;
+            int y = 0x1A3F;
+            int z = 0b1010;
+            int x1 = 2e3;
+            int y1 = 2.7e3;
+            int z1 = 2.7e3;
+            int x2 = .7e-3;
+            string s = "Hello, Lexer!";
+            char c = 'A';
+            bool flag = true;
+
+            // Арифметические операции
+            x += y - z * 2 / 3 % 4;
+
+            // Логические и условные операторы
+            if (x > 10 && y != 0 || flag ?? false)
+            {
+                Console.WriteLine("Condition met!");
+            }
+
+            // Тернарный оператор
+            int result = flag ? 1 : 0;
+
+            // Лямбда-выражение
+            Func<int, int> square = n => n * n;
+        }
+    }
+}
